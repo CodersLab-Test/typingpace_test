@@ -7,10 +7,10 @@ function init() {
 	const playText = document.querySelector("textarea");
 	const button = document.querySelector("button");
 	button.addEventListener("click", function() {
-		console.log(this.innerText);
 /* After clicking the button 'Start', the text area gets enabled */
 		if (this.innerText === "Start") {
 			playText.disabled = false;
+			playText.value = "";
 			playGame();
 		}
 		else if (this.innerText === "Done") {
@@ -35,11 +35,21 @@ function init() {
 		let date = new Date();
 		endTime = date.getTime();
 		let totalTime = ( (endTime - startTime) / 1000);
-		/* the division by 1000 to get seconds as a result */
-		console.log(totalTime);
-		/* for counting the number of words written by user */
+/* the division by 1000 to get seconds as a result */
+/* for counting the number of words written by user */
 		let str = playText.value;
+		let wordCount = wordCounter(str);
+		let speed = Math.round((wordCount / totalTime) * 60);
+		let userFeedback = `You typed at ${speed} words per minute.`;
+		if (str != message.innerText) {
+			userFeedback += "<br>There are some errors in the wording"
+		}
+		message.innerHTML = userFeedback;
+	}
 
+	function wordCounter(strWords) {
+		let response = strWords.split(" ").length;
+		return response;
 	}
 
 
