@@ -35,21 +35,34 @@ function init() {
 		let date = new Date();
 		endTime = date.getTime();
 		let totalTime = ( (endTime - startTime) / 1000);
-/* the division by 1000 to get seconds as a result */
-/* for counting the number of words written by user */
+/* The division by 1000 to get seconds as a result */
+
+/* For counting the number of words written by user and letting they know about the result */
 		let str = playText.value;
 		let wordCount = wordCounter(str);
 		let speed = Math.round((wordCount / totalTime) * 60);
 		let userFeedback = `You typed at ${speed} words per minute.`;
-		if (str != message.innerText) {
-			userFeedback += "<br>There are some errors in the wording"
-		}
+		
+		userFeedback += "<br>" + compareWords(message.innerText, str);
 		message.innerHTML = userFeedback;
 	}
 
 	function wordCounter(strWords) {
 		let response = strWords.split(" ").length;
 		return response;
+	}
+/* Accurate checking the user's result by comparing the words written in the textarea 
+and the text got from the base array */
+	function compareWords(str1, str2) {
+		let words1 = str1.split(" ");
+		let words2 = str2.split(" ");
+		let counter = 0;
+		words1.forEach( function(item, index) {
+			if (item === words2[index]) {
+				counter++;
+			}
+		});
+		 return (counter + " words correct out of " + words1.length);
 	}
 
 
