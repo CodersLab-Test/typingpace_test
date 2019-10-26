@@ -6,6 +6,7 @@ function init() {
 	const message = document.querySelector(".message");
 	const playText = document.querySelector("textarea");
 	const button = document.querySelector("button");
+	
 	button.addEventListener("click", function() {
 /* After clicking the button 'Start', the text area gets enabled */
 		if (this.innerText === "Start") {
@@ -64,9 +65,6 @@ and the text got from the base array */
 		});
 		 return (counter + " words correct out of " + words1.length);
 	}
-
-
-
 
 }
 
