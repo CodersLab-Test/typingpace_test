@@ -15,7 +15,7 @@ function init() {
 			playText.disabled = false;
 			playText.value = ""; // wyzerowanie obszaru wpisywania
 			text = ""; 			// randomly generated string made empty (and ready for new value)
-			randomTextGen(25);	// run function
+			randomTextGen(30);	// run function
 			playGame();			// run function
 		}
 		else if (this.innerText === "Done") {
@@ -53,16 +53,16 @@ function init() {
 		let date = new Date();			// checking the current time
 		startTime = date.getTime();
 		button.innerText = "Done"; 		// changing the name of the button
-/* After changing the name of the button - its 'innerText' - it does not start the playGame function again */
+	/* After changing the name of the button - its 'innerText' - it does not start the playGame function again */
 	}
 
 	function endGame() {
 		let date = new Date(); 			// checking the current time
 		endTime = date.getTime();
 		let totalTime = ( (endTime - startTime) / 1000); // counting the typing pace
-/* The division by 1000 to get seconds as a result */
+	/* The division by 1000 to get seconds as a result */
 
-/* Counting the number of words written by user and letting they know about the result */
+	/* Counting the number of words written by user and letting they know about the result */
 		let str = playText.value;
 		let wordCount = wordCounter(str);
 		let speed = Math.round((wordCount / totalTime) * 60);
@@ -87,7 +87,7 @@ and the text got from the generator */
 				counter++;
 			}
 		});
-		return (counter + " words correct out of " + words1.length);
+		return (counter + " words correct out of " + words1.length + ".");
 	}
 
 }
