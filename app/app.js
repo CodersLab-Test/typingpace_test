@@ -1,19 +1,18 @@
 document.addEventListener("DOMContentLoaded", init);
 function init() {
-	const wording = ["The open nature of the World Wide Web presents incredible opportunities for people who want to create websites or online applications.", "To take full advantage of the web's capabilities, you need to know how to use them, and this is the reason you have to know JavaScript.", "JavaScript is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions.", "While it is most well-known as the scripting language for Web pages, many non-browser environments also use it.", "JavaScript is a prototype-based, multi-paradigm, dynamic language, supporting object-oriented, imperative, and declarative (e.g. functional programming) styles"];
-	// POWYSZA LINIA DO ZASTĄPIENIA
+	
 	let startTime, 
 		endTime;
 	const message = document.querySelector(".message"); 	// text for typing area (and the result message)
 	const playText = document.querySelector("textarea"); 	// typing area
-	const button = document.querySelector("button"); 		// Start/Done button 
+	const button = document.querySelector("#startTest"); 	// Start/Done button 
 	let text = "";											// empty string for randomly generated text
 	
 	button.addEventListener("click", function() {
 /* After clicking the button 'Start', the text area gets enabled */
 		if (this.innerText === "Start") {
 			playText.disabled = false;
-			playText.value = ""; // wyzerowanie obszaru wpisywania
+			playText.value = ""; // clearing textarea for typing again and again
 			text = ""; 			// randomly generated string made empty (and ready for new value)
 			randomTextGen(30);	// run function
 			playGame();			// run function
@@ -27,7 +26,7 @@ function init() {
 /* F. randomly generating text for typing */
 	function randomTextGen(numOfWords) {
 	// let's declare the content of the text (set of words)
-	    let wordsArray = "agawa,a,aromat,awaria,adaptuj,aż,aby,albo,ale,akacja,adaptowany,amorficzny,amelinium,anormalny,aktywuj,alarmuj,beta,buk,banda,cieciorka,cały,coś,celuj,cofaj,cumuj,dom,dobrze,drzewo,embrion,elegancja,emanuje,elewacja,emulsja,eliksir,ekonimista,elektronika,ekler,fuga,fanaberia,fatamorgana,gra,gdy,gamoń,gryzoń,gbur,hulaj,hamulec,imię,idiota,inspiruj,i,i,idź,igła,ikona,ignoruj,ingeruj,indyk,instalator,jagnię,jutro,jasny,kwitnie,kra,krowa,kolumna,lalka,lub,lump,lina,monitor,mimowolnie,mmniej,nie,nie,naczelnik,numerolog,nadzieja,niespodzianka,naklejka,oddział,opona,okno,otwieracz,obieraj,otwieraj,ortopeda,oglądaj,ogarniać,odgrzewaj,prywata,peron,popiel,rozgałęźnik,ruszaj,racja,ranga,róg,spacja,startuj,syp,synekura,szukaj,tyka,truje,tor,traktuj,uwaga,unieruchamia,ucho,walcz,waga,wiruj,wał,więcej,zamknij,zakaz,zez,zobacz,zaraz,że".split(",");
+	    let wordsArray = "agawa,a,a,aromat,awaria,adaptuj się,aż,aby,albo,ale,akacja,adaptowany,amorficzny,amelinium,anormalny,aktywuj się,alarmuj,beta-test,buk,banda,cieciorka,cały czas,coś,celuj,cofaj,cumuj,dom,dobrze,drzewo,embrion,elegancja,emanuje,elewacja,emulsja,eliksir,ekonimista,elektronika,ekler,fuga,fanaberia,fatamorgana,gra,gdy,gamoń,gryzoń,gbur,hulaj,hamulec,imię,idiota,inspiruj się,i,i,idź,igła,ikona,ignoruj,nie ingeruj,indyk,instalator,jagnię,jutro,jasny,kwitnie,kra,krowa,kolumna,lalka,lub,lump,lina,monitor,mimowolnie,mmniej,nie,nie,naczelnik,numerolog,nadzieja,niespodzianka,naklejka,oddział,opona,okno,otwieracz,obieraj,otwieraj,ortopeda,oglądaj,ogarniać,odgrzewaj,prywata,peron,popiel,pilnuj ternimów,rozgałęźnik,ruszaj,racja,ranga,róg,spacja,startuj,syp,synekura,szukaj rozwiązań,zegar tyka,truje,tor,traktuj poważnie,uwaga,unieruchamia,ucho,walcz mężnie,waga,wiruj,wał,więcej,zamknij,zakaz,zez,zobacz,zaraz,że".split(",");
 
 	    for (let i = 0; i < numOfWords; i++) {
 	        let rand = null; 
