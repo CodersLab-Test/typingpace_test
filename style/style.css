@@ -20,8 +20,8 @@ h1 {
 
 p {
 	color: #222;
-	font-size: .9rem;
-	line-height: 1rem;
+	font-size: 1rem;
+	line-height: 1.2rem;
 	padding: .1rem .5rem;
 	text-align: justify;
 }
@@ -57,6 +57,9 @@ button {
 
 @media screen and (max-width: 700px) {
 	.wraper {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
 		margin: 1rem auto;
 		width: 95%;
 	}
@@ -70,9 +73,9 @@ button {
 	}
 	textarea {
 		font-size: 1.2rem;
-		margin: .2rem auto;
+		margin: .1rem auto;
 		padding: .2rem;
-		width: 98%;
+		width: 97%;
 	}
 	.message {
 		font-size: 1.4rem;
@@ -83,9 +86,9 @@ button {
 	}
 	button {
 		font-size: 1.2rem;
-		height: 3rem;
+		height: 2.6rem;
 		margin: .5rem auto;
-		padding: 1rem;
+		padding: .6rem;
 		width: 6rem;
 	}
 }
