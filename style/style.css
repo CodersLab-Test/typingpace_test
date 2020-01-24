@@ -10,7 +10,7 @@ html, body {
 	border-radius: .5rem;
 	box-shadow: .5rem .5rem .6rem gray;
 	margin: 5rem auto;
-	max-width: 35rem;
+	width: 35rem;
 }
 
 h1 {
@@ -55,3 +55,23 @@ button {
 	width: 5rem;
 }
 
+@media screen and (max-width: 700px) {
+	.wraper {
+		margin: 1rem auto;
+		width: 95%;
+	}
+	h1 {
+		font-size: 1.4rem;
+	}
+	p {
+		font-size: .9rem;
+		line-height: 1rem;
+		padding: .1rem .5rem;
+	}
+	textarea {
+		font-size: 1rem;
+		margin: .2rem auto;
+		padding: .2rem;
+		width: 98%;
+	}
+}
